@@ -27,7 +27,7 @@ public class Defer {
         Observable<String> observable = Observable.fromArray("James", "Tom", "Paul", "BMW");
         Observable<String> deferObservable = Observable.defer(() -> observable)
                 .doOnNext(System.out::println);
-        Thread.sleep(1000);
+        Thread.sleep(1_000);
         deferObservable.subscribe();
     }
 }

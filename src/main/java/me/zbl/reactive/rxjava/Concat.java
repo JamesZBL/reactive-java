@@ -27,9 +27,9 @@ public class Concat {
 
     public static void main(String[] args) throws InterruptedException {
         Observable.fromArray("James", "Tom", "Paul", "BMW")
-                .concatWith(Observable.interval(1000, TimeUnit.MILLISECONDS).map(String::valueOf))
+                .concatWith(Observable.interval(1_000, TimeUnit.MILLISECONDS).map(String::valueOf))
                 .doOnNext(System.out::println)
                 .subscribe();
-        Thread.sleep(4000);
+        Thread.sleep(4_000);
     }
 }

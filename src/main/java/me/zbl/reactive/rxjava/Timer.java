@@ -31,6 +31,6 @@ public class Timer {
                 .timer(500, TimeUnit.MILLISECONDS)
                 .doOnNext(i -> System.out.println("Time out"))
                 .subscribe();
-        Thread.sleep(1000);
+        Thread.sleep(1_000);
     }
 }

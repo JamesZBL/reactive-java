@@ -30,6 +30,6 @@ public class Timestamp {
                 .timestamp(TimeUnit.SECONDS)
                 .doOnNext(System.out::println)
                 .subscribe();
-        Thread.sleep(5000);
+        Thread.sleep(5_000);
     }
 }

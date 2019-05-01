@@ -30,6 +30,6 @@ public class FlatMap {
                 .flatMap(i -> Observable.range(i.intValue() * 10, 5))
                 .doOnNext(System.out::println)
                 .subscribe();
-        Thread.sleep(5000);
+        Thread.sleep(5_000);
     }
 }

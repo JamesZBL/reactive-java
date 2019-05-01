@@ -28,7 +28,7 @@ public class TimeInterval {
 
     public static void main(String[] args) {
         Observable.fromArray("James", "Tom", "Paul", "BMW")
-                .doOnNext(i -> Thread.sleep(new Random().nextInt(2000)))
+                .doOnNext(i -> Thread.sleep(new Random().nextInt(2_000)))
                 .timeInterval(TimeUnit.MILLISECONDS)
                 .doOnNext(System.out::println)
                 .subscribe();

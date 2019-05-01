@@ -34,6 +34,6 @@ public class Merge {
                 .mergeWith(third)
                 .doOnNext(System.out::println)
                 .subscribe();
-        Thread.sleep(5000);
+        Thread.sleep(5_000);
     }
 }

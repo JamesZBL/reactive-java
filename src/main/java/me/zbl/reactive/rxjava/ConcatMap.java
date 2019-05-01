@@ -30,6 +30,6 @@ public class ConcatMap {
                 .concatMap(i -> Observable.range(i.intValue(), 5))
                 .doOnNext(System.out::println)
                 .subscribe();
-        Thread.sleep(5000);
+        Thread.sleep(5_000);
     }
 }
