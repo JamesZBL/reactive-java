@@ -21,7 +21,7 @@ import io.reactivex.Observable;
  * @author ZHENG BAO LE
  * @since 2019-05-01
  */
-public class Start {
+public class StartWith {
 
     public static void main(String[] args) {
         Observable.fromArray("James", "Tom", "Paul", "BMW")
