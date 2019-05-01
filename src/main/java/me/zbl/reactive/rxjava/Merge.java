@@ -17,6 +17,8 @@ package me.zbl.reactive.rxjava;
 
 import io.reactivex.Observable;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author ZHENG BAO LE
  * @since 2019-05-01
@@ -24,14 +26,14 @@ import io.reactivex.Observable;
 public class Merge {
 
     public static void main(String[] args) throws InterruptedException {
-        Observable<String> languageObservable = Observable.fromArray("Javascript", "Java", "Python", "Kotlin", "C++");
-        Observable<String> countryObservable = Observable.fromArray("China", "Russia", "India", "Brazil", "Korea");
-        Observable<String> foodObservable = Observable.fromArray("Bread", "Rice", "Apple", "Cheese", "Wine");
-        languageObservable
-                .mergeWith(countryObservable)
-                .mergeWith(foodObservable)
+        Observable<Long> first = Observable.interval(500, TimeUnit.MILLISECONDS);
+        Observable<Long> second = Observable.interval(600, TimeUnit.MILLISECONDS);
+        Observable<Long> third = Observable.interval(700, TimeUnit.MILLISECONDS);
+        first
+                .mergeWith(second)
+                .mergeWith(third)
                 .doOnNext(System.out::println)
                 .subscribe();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
     }
 }
