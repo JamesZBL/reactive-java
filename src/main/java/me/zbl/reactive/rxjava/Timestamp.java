@@ -28,7 +28,7 @@ public class Timestamp {
     public static void main(String[] args) throws InterruptedException {
         Observable.interval(1, TimeUnit.SECONDS)
                 .timestamp(TimeUnit.SECONDS)
-                .doOnNext(i -> System.out.println("time: " + i.time(TimeUnit.SECONDS) + ", value: " + i.value()))
+                .doOnNext(System.out::println)
                 .subscribe();
         Thread.sleep(5000);
     }
