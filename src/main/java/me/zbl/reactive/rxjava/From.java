@@ -24,7 +24,13 @@ import io.reactivex.Observable;
 public class From {
 
     public static void main(String[] args) {
+
         Observable.fromCallable(() -> "RxJava")
+                .doOnNext(System.out::println)
+                .doOnComplete(System.out::println)
+                .subscribe();
+
+        Observable.fromArray("James", "Tom", "Paul", "BMW")
                 .doOnNext(System.out::println)
                 .subscribe();
     }
