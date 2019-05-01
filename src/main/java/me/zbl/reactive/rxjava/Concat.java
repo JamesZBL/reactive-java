@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
  * @author ZHENG BAO LE
  * @since 2019-05-01
  */
-public class Merge {
+public class Concat {
 
     public static void main(String[] args) throws InterruptedException {
         Observable.fromArray("James", "Tom", "Paul", "BMW")
