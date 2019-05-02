@@ -25,11 +25,10 @@ import io.reactivex.schedulers.Schedulers;
 public class SubscribeOn {
 
     public static void main(String[] args) throws InterruptedException {
-        Observable.range(0, 10)
-                .subscribeOn(Schedulers.computation())
-                .doOnNext(System.out::println)
+        Observable.just(1)
+                .doOnSubscribe(ObserveOn::threadInfo)
+                .subscribeOn(Schedulers.newThread())
                 .subscribe();
-
         Thread.sleep(1_000);
     }
 }

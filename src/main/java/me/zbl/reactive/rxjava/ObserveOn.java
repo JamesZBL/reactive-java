@@ -60,7 +60,7 @@ public class ObserveOn {
         Thread.sleep(1_000);
     }
 
-    private static void threadInfo(Object message) {
+    static void threadInfo(Object message) {
         System.out.println(Thread.currentThread().getName() + ": " + message);
     }
 }
