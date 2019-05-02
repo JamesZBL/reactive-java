@@ -28,7 +28,8 @@ public class GroupBy {
     public static void main(String[] args) throws InterruptedException {
         Observable.interval(200, TimeUnit.MILLISECONDS)
                 .groupBy(i -> i % 2 == 0)
-                .doOnNext(n -> n.buffer(4).doOnNext(System.out::println).subscribe())
+                .flatMap(i -> i.buffer(4))
+                .doOnNext(System.out::println)
                 .subscribe();
         Thread.sleep(5_000);
     }
